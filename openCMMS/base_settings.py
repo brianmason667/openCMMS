@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -33,11 +33,22 @@ AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 BASE_URL = 'http://127.0.0.1:8000/'
 
 INSTALLED_APPS = [
-    'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions',
-    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework', 'rest_framework_swagger', 'drf_yasg',
-    'usersmanagement.apps.UsersmanagementConfig', 'maintenancemanagement.apps.MaintenancemanagementConfig',
-    'utils.apps.UtilsConfig', 'django_inlinecss'
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_swagger',
+    'drf_yasg',
+    'usersmanagement.apps.UsersmanagementConfig',
+    'maintenancemanagement.apps.MaintenancemanagementConfig',
+    'utils.apps.UtilsConfig',
+    'django_inlinecss',
+    'frontend.apps.FrontendConfig',  # Add new frontend app here
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,17 +87,32 @@ AUTH_USER_MODEL = 'usersmanagement.UserProfile'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default':
+#         {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'django',
+#             'USER': 'django',
+#             'PASSWORD': 'django',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+# }
+
+# We use docker hostnames, and updated defaults
+
 DATABASES = {
-    'default':
-        {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'django',
-            'USER': 'django',
-            'PASSWORD': 'django',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',  # Ensure this matches POSTGRES_DB in docker-compose
+        'USER': 'your_username',        # Ensure this matches POSTGRES_USER in docker-compose
+        'PASSWORD': 'your_password',     # Ensure this matches POSTGRES_PASSWORD in docker-compose
+        'HOST': 'postgres_db',           # This should match the service name in docker-compose
+        'PORT': '5432',
+    }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
