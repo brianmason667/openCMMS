@@ -1,0 +1,21 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}{% if task %}Edit Task: {{ task.name }}{% else %}Create Task{% endif %}{% endblock %}
+
+{% block content %}
+<h1>{% if task %}Edit Task: {{ task.name }}{% else %}Create Task{% endif %}</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="form-group">
+        <label for="files">Attach Files:</label>
+        <input type="file" name="files" id="files" multiple>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{% if task %}Update Task{% else %}Create Task{% endif %}</button>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}

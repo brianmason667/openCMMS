@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}OpenCMMS{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <header>
+        <div id="panel" class="d-flex justify-content-between bg-light p-2">
+            <a href="#mypanel" class="btn btn-outline-primary">Menu</a>
+            <h1>OpenCMMS</h1>
+            <a href="{% url 'home' %}" class="btn btn-outline-primary">Profile</a>
+            
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Vertical Navigation -->
+            <nav class="col-md-2 bg-dark text-white p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white">Home</a></li>
+                    <li><a href="{% url 'work-orders' %}">Work Orders</a></li>
+                    <li><a href="{% url 'inventory' %}">Inventory</a></li>
+                    <li><a href="{% url 'reports' %}">Reports</a></li>
+                    <li><a href="{% url 'asset-management' %}">Asset Management</a></li>
+                    <li><a href="{% url 'scheduling' %}">Scheduling</a></li>
+                    <li><a href="{% url 'user-management' %}">User Management</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'work-order-create' %}">Add Work Order</a></li>
+                    <li class="nav-item"><a href="{% url 'equipment-list' %}" class="nav-link text-white">Equipment</a></li>
+                    <li class="nav-item"><a href="{% url 'task-list' %}" class="nav-link text-white">Tasks</a></li>
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Content Area -->
+            <main class="col-md-10">
+                {% block content %}
+                <p>Page content goes here</p>
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <footer class="text-center p-3">
+        <p>&copy; {{ year }} OpenCMMS. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

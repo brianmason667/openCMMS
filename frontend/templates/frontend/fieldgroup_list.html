@@ -1,0 +1,36 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Field Groups{% endblock %}
+
+{% block content %}
+<h1>Field Groups</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Equipment</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fieldgroup in fieldgroups %}
+            <tr>
+                <td>{{ fieldgroup.name }}</td>
+                <td>{{ fieldgroup.is_equipment|yesno:"Yes,No" }}</td>
+                <td>
+                    <a href="{% url 'fieldgroup_detail' fieldgroup.id %}" class="btn btn-info">View</a>
+                    <a href="{% url 'fieldgroup_edit' fieldgroup.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'fieldgroup_confirm_delete' fieldgroup.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="3">No field groups available.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'fieldgroup_create' %}" class="btn btn-success">Add New Field Group</a>
+{% endblock %}

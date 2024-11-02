@@ -1,0 +1,15 @@
+<!-- app/equipment_form.html -->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <label for="id_line">Production Line:</label>
+    <select name="line" id="id_line">
+        <option value="">Select a line</option>
+        {% for line in lines %}
+            <option value="{{ line.id }}">{{ line.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Create Equipment</button>
+</form>

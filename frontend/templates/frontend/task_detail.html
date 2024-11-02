@@ -1,0 +1,37 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Task Detail: {{ task.name }}{% endblock %}
+
+{% block content %}
+<h1>Task Detail</h1>
+
+<div class="task-detail">
+    <h2>{{ task.name }}</h2>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>End Date:</strong> {{ task.end_date }}</p>
+    <p><strong>Created By:</strong> {{ task.created_by }}</p>
+    <p><strong>Achieved By:</strong> {{ task.achieved_by }}</p>
+    <p><strong>Assigned Equipment:</strong> {{ task.equipment }}</p>
+    <p><strong>Assigned Equipment Type:</strong> {{ task.equipment_type }}</p>
+    <p><strong>Teams Assigned:</strong>
+        {% for team in task.teams.all %}
+            {{ team.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            None
+        {% endfor %}
+    </p>
+
+    <h3>Files</h3>
+    <ul>
+        {% for file in task.files.all %}
+        <li>{{ file.file.name }}</li>
+        {% empty %}
+        <li>No files attached.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'task_edit' task.id %}" class="btn btn-primary">Edit Task</a>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">Back to Task List</a>
+</div>
+
+{% endblock %}

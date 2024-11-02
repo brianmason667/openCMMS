@@ -1,0 +1,38 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Equipment List{% endblock %}
+
+{% block content %}
+<h1>Equipment List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for equipment in equipment_list %}
+        <tr>
+            <td>{{ equipment.id }}</td>
+            <td>{{ equipment.name }}</td>
+            <td>{{ equipment.equipment_type.name }}</td> <!-- Adjust as necessary for your model -->
+            <td>
+                <a href="{% url 'equipment_detail' equipment.id %}">View</a> |
+                <a href="{% url 'equipment_edit' equipment.id %}">Edit</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No equipment found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'equipment-create' %}" class="btn btn-primary">Add New Equipment</a>
+
+{% endblock %}

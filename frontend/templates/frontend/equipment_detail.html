@@ -1,0 +1,33 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Equipment Detail: {{ equipment.name }}{% endblock %}
+
+{% block content %}
+<h1>Equipment Detail: {{ equipment.name }}</h1>
+
+<p><strong>Type:</strong> {{ equipment.equipment_type.name }}</p>
+<p><strong>Files:</strong></p>
+<ul>
+    {% for file in equipment.files.all %}
+        <li>{{ file.file.name }}</li>
+    {% empty %}
+        <li>No files associated with this equipment.</li>
+    {% endfor %}
+</ul>
+
+<p><strong>Tasks:</strong></p>
+<ul>
+    {% for task in equipment.task_set.all %}
+        <li>
+            <a href="{% url 'task_detail' task.id %}">{{ task.name }}</a>
+        </li>
+    {% empty %}
+        <li>No tasks associated with this equipment.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'equipment_list' %}" class="btn btn-secondary">Back to Equipment List</a>
+<a href="{% url 'equipment_edit' equipment.id %}" class="btn btn-primary">Edit Equipment</a>
+<a href="{% url 'equipment_confirm_delete' equipment.id %}" class="btn btn-danger">Delete Equipment</a>
+
+{% endblock %}

@@ -1,0 +1,212 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #14458f;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#header-title {
+    display: inline;
+    margin-left: 15%;
+    text-align: left;
+}
+
+/* Panel styling */
+#panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+#panel h1 {
+    margin: 0;
+}
+
+/* Vertical navigation styles */
+nav {
+    background-color: #14458f;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    padding-top: 70px; /* Adjust for panel height */
+    overflow-y: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #0b3d8b;
+}
+
+/* Main content area */
+main {
+    margin-top: 60px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Bootstrap customizations */
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+h1 {
+    color: #fff;
+}
+
+.btn-custom {
+    background-color: #21AF2B;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #1a9f25;
+}
+
+/* Form styles */
+form .input-blank {
+    background: #FF7373;
+}
+
+#content-wrap form input {
+    width: 95%;
+    border-radius: 7px;
+    margin-left: 1px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Grid layouts */
+.get-issue-parts-form .normal,
+.adjust-inventory-form .normal {
+    width: 50%;
+}
+
+.get-issue-parts-form .three {
+    width: 33%;
+}
+
+.get-issue-parts-form .issue-input-group .no-right,
+.get-issue-parts-form .slash-group .no-right,
+.adjust-inventory-form .no-right {
+    border-right: none;
+}
+
+.get-issue-parts-form .issue-input-group .no-left,
+.get-issue-parts-form .slash-group .no-left,
+.adjust-inventory-form .no-left {
+    border-left: none;
+}
+
+/* Error messages */
+#error-msg,
+.usermsg {
+    color: #DF2A2A;
+    margin: 5px;
+    text-align: center;
+}
+
+/* Scrollable elements */
+#results-list {
+    height: 200px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+/* Additional grid adjustments */
+.request-grid .ui-block-b {
+    width: 38%;
+}
+
+.request-grid .ui-block-c,
+.comp-grid .ui-block-a {
+    width: 14%;
+}
+
+.request-grid .ui-block-d,
+.comp-grid .ui-block-b {
+    width: 23%;
+}
+
+.comp-grid .ui-block-c {
+    width: 63%;
+}
+
+/* Button styling */
+#mx-proceed {
+    background: #21AF2B;
+    border-color: #21AF2B;
+}
+
+#mx-cancel {
+    background: #DF2A2A;
+    border-color: #DF2A2A;
+}
+
+/* Datepicker styling */
+.dwv {
+    text-align: center !important;
+    background: linear-gradient(to bottom, #444, #2d2d2d);
+}
+
+.dwbg .dwb {
+    background: linear-gradient(to bottom, #444, #2d2d2d);
+    border-radius: 1em;
+}
+
+.dwbg .dwb:active {
+    background: linear-gradient(to bottom, #3C607C, #3373a5);
+}
+
+div.dwb-a {
+    background: #3373a5 !important;
+}
+
+div.dwb-a span {
+    color: #FFF;
+}
+
+/* Additional description and scroll styles */
+.x-desc, .b-desc {
+    overflow-y: scroll;
+}
+
+.x-desc {
+    height: 66px;
+}
+
+.b-desc {
+    height: 52px;
+}

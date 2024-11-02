@@ -29,7 +29,8 @@ urlpatterns = [
     path('api/usersmanagement/', include('usersmanagement.urls')),
     path('api/maintenancemanagement/', include('maintenancemanagement.urls')),
     path('api/', include('utils.urls')),
-    path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui')
+    path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', include('frontend.urls')),  # Adjust the path as necessary
 ]
 
 if settings.DEBUG:

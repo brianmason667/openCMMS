@@ -5,6 +5,15 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from usersmanagement.models import Team, UserProfile
 
+class Line(models.Model):
+    """Define a production line."""
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return f"<Line: id={self.id}, name='{self.name}'>"
 
 class File(models.Model):
     """Define a file."""
@@ -129,6 +138,14 @@ class Equipment(models.Model):
     """Define an equipment."""
 
     name = models.CharField(max_length=100)
+    line = models.ForeignKey(
+        Line,
+        verbose_name="Production Line",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,  # Allow for equipment not to be assigned to a line
+        related_name="equipment_set"
+    )
     equipment_type = models.ForeignKey(
         EquipmentType,
         verbose_name="Equipment Type",
@@ -157,6 +174,14 @@ class Task(models.Model):
     """Define a task."""
 
     name = models.CharField(max_length=100)
+    line = models.ForeignKey(
+        Line,
+        verbose_name="Production Line",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="workorder_set"
+    )
     end_date = models.DateField(null=True, blank=True)  # Correspond à la date butoire
     description = models.TextField(max_length=2000, default="", blank=True)
     duration = models.DurationField(null=True, blank=True)  # Correspond à la durée forfaitaire

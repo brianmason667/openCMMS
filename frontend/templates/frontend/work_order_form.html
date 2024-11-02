@@ -1,0 +1,13 @@
+<!-- frontend/templates/frontend/work_order_form.html -->
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Create Work Order</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}
