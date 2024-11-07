@@ -1,11 +1,12 @@
 # urls.py
 
-from django.urls import path
+from django.urls import path, include
 from . import views
 from .views import *
 
 urlpatterns = [
     
+    path('accounts/', include('django.contrib.auth.urls')),
     path('tasks/', TaskListView.as_view(), name='task-list'),
     path('tasks/<int:pk>/', TaskDetailView.as_view(), name='task-detail'),
     path('tasks/create/', TaskCreateView.as_view(), name='task-create'),
@@ -23,4 +24,8 @@ urlpatterns = [
     path('scheduling/', SchedulingView.as_view(), name='scheduling'),
     path('user-management/', UserManagementView.as_view(), name='user-management'),
     path('work-order/create/', work_order_create, name='work-order-create'),
+    path('login/', user_login, name='login'),
+    path('partadd/', add_part, name='add_part'),
+    path('parts', part_list, name='part_list'),
+    path('partsearch/', search_parts, name='search_parts'),
 ]

@@ -1,0 +1,79 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+
+<form method="get" action="{% url 'search_parts' %}">
+    <input type="text" name="q" placeholder="Search parts...">
+    <button type="submit">Search</button>
+</form>
+    <h1>Part Inventory</h1>
+    <table class="table table-striped table-hover" id="table-custom-2">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Part Number</th>
+                <th scope="col">Alternative Part Number</th>
+                <th scope="col">Location</th>
+                <th scope="col">Bin Location</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Stock Status</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Manufacturer Part Number</th>
+                <th scope="col">On Hand</th>
+                <th scope="col">On Order</th>
+                <th scope="col">Active</th>
+                <!-- <th>Last Order Date</th> -->
+                <!-- <th>Lead Time</th> -->
+                <!-- <th>Order Point</th> -->
+                <!-- <th>Order Quantity</th> -->
+                <!-- <th>Unit of Measure</th> -->
+                <!-- <th>Comment</th> -->
+                <!-- <th scope="col">History</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for part in parts %}
+                <tr>
+                    <td>{{ part.description }}</td>
+                    <td>{{ part.part_number }}</td>
+                    <td>{{ part.alt_part_number }}</td>
+                    <td>{{ part.location }}</td>
+                    <td>{{ part.bin_location }}</td>
+                    <td>{{ part.cost }}</td>
+                    <td>{{ part.stock }}</td>
+                    <td>{{ part.manufacturer }}</td>
+                    <td>{{ part.manufacturer_part_number }}</td>
+                    <td>{{ part.on_hand }}</td>
+                    <td>{{ part.on_order }}</td>
+                    <td>{{ part.active }}</td>
+                    <!-- <td>{{ part.last_order }}</td> -->
+                    <!-- <td>{{ part.lead_time }}</td> -->
+                    <!-- <td>{{ part.order_point }}</td> -->
+                    <!-- <td>{{ part.order_quantity }}</td> -->
+                    <!-- <td>{{ part.unit_of_measure }}</td> -->
+                    <!-- <td>{{ part.comment }}</td> -->
+                    <!-- <td>{{ part.history }}</td> -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if parts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ parts.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ parts.number }} of {{ parts.paginator.num_pages }}.
+            </span>
+
+            {% if parts.has_next %}
+                <a href="?page={{ parts.next_page_number }}">next</a>
+                <a href="?page={{ parts.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+{% endblock %}

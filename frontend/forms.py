@@ -1,7 +1,7 @@
 # frontend/forms.py
 
 from django import forms
-from .models import Task, Equipment
+from .models import Task, Equipment, Part
 
 class TaskForm(forms.ModelForm):
     class Meta:
@@ -21,3 +21,8 @@ class WorkOrderForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = ['name', 'line', 'description', 'end_date', 'duration', 'equipment']  # Include fields as needed
+
+class PartForm(forms.ModelForm):
+    class Meta:
+        model = Part
+        fields = '__all__'  # Or specify fields explicitly

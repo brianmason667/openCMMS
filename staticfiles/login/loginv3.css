@@ -1,0 +1,404 @@
+﻿html {
+  height: 100%;
+  color: #16325c;
+}
+
+body {
+  margin: 0 auto;
+  /*font: normal 10pt "Segoe UI", Arial;*/
+  background-color: #f7f7f7;
+  display: table;
+  width: 100%;
+  padding: 0px;
+  height: 100%;
+  color: #16325c;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  color: #0070d2;
+}
+
+a img {
+  border: none;
+  vertical-align: unset;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.adrow a {
+  padding: 0;
+}
+
+#forgot-password-anchor {
+  padding: 0;
+}
+
+#logo {
+  position: absolute;
+  top: 25px;
+  left: 71px;
+}
+
+#footer a { color: #16325c; }
+
+.breaker { clear: both; }
+
+.r4 { border-radius: 4px; }
+
+.wide { width: 100%; }
+
+.mb16 { margin-bottom: 1rem; }
+
+.mb32 { margin-bottom: 2rem; }
+
+.mt8 { margin-top: 0.5rem; }
+
+img.logo { width: 160px; }
+
+img {
+  vertical-align: middle;
+  border: 0;
+  max-width: 250px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+a:hover, a:active { color: #005fb2; }
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+p {
+  display: block;
+  text-align: left;
+  text-align: start;
+  margin: 0px;
+  line-height: 1.5rem;
+}
+
+.label,
+label, .span,
+span {
+  color: #54698d !important;
+  margin: 0 0 8px 0 !important;
+  line-height: inherit !important;
+  font-weight: normal !important;
+  font-size: 100% !important;
+}
+
+div,
+form {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: 0;
+
+  color: white;
+  background-color: #d8dde6;
+  cursor: pointer;
+  background-image: none !important;
+}
+
+/* Style a link to look like a button */
+a.button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button#password-button:disabled {
+  cursor: default;
+}
+
+.error {
+  color: #cf4f43;
+}
+
+.errorcode {
+  font-size: 10px;
+  color: #54698d; /* Color for labels */
+}
+
+.right {
+  float: right;
+}
+
+/* Inputs */
+
+input {
+  height: auto !important;
+}
+
+
+input.input {
+  border: 1px solid #d8dde6;
+  border-radius: 4px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-color: #fff;
+
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  transition: all 0.1s;
+  color: black;
+
+  padding: 11px;
+  
+}
+
+.input:focus {
+  background-color: #ffffff;
+  border: 1px solid #1589ee;
+  outline: 0;
+}
+
+button[type="submit"] {
+  background-color: #2e5cda !important;
+  border-color: #2e5cda !important;
+  color: black !important;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:active {
+  background-color: #2e5cda !important;
+  border-color: #2e5cda !important;
+}
+
+/* Removes native iOS button styling */
+button[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.username {
+  display: block;
+}
+
+#wrapper {
+  padding: 50px 50px 15px 50px;
+  margin-bottom: 15px;
+  min-width: 360px;
+  border: 1px solid #d8dde6;
+  border-radius: 5px;
+  /*-moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;*/
+  box-shadow: 0px 0px 20px 7px rgb(0 0 0 / 10%);
+}
+
+.standard_logo_wrapper {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: table;
+  width: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: 100%;
+}
+
+#main {
+  overflow: hidden;
+}
+
+#footer {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  clear: both;
+  text-align: center;
+}
+
+#content {
+  margin: 0px auto;
+  padding: 1.25rem;
+  color: #16325c;
+}
+
+
+/* Login page sections */
+
+#left {
+  display: table-cell;
+  height: 100%;
+  background-color: white;
+}
+
+#right {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.6);
+  /* border-left: 1px solid #d8dde6 */
+}
+
+#right iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  float: right;
+}
+
+/* Login form */
+
+#pwcaps {
+  font-size: 12px;
+  color: #54698d;
+}
+
+#pwcapsicon {
+  margin-right: 4px;
+  margin-bottom: 5px;
+}
+
+.inputgroup {
+  position: relative;
+}
+
+.loginError {
+  color: #c23934;
+  text-align: center;
+  display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+  #left {
+    width: 100%;
+    height:100%;
+    display: block;
+  }
+  .photos {
+    width: 100%;
+    height:auto !important;
+    display: block;
+  }
+  #wrapper {
+    border: none;
+    padding:20px 0 0 0;
+    box-shadow: none;
+  }
+  #right {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #wrapper {
+    max-width: 100%;
+    margin-left: inherit;
+    left: inherit;
+  }
+
+  .photos {
+    width: 100%;
+    height:auto !important;
+    display: block;
+  }
+
+  #content {
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+
+  .label,
+  .small, 
+  #footer {
+    font-size: 0.875rem;
+  }
+}
+
+@media only screen and (max-height: 750px) {
+  .photos img {
+    max-width:250px;
+  }
+}
+
+@media only screen and (max-height: 560px) {
+  .photos {
+    width: 100%;
+    height:auto !important;
+    display: block;
+  }
+  #wrapper {
+    padding:20px 0 0 0;
+    border: none;
+    box-shadow: none;
+  }
+  #right {
+    display: none;
+  }
+}
+
+input:not(.btn):focus,
+input:not(.btn):focus {
+  background-color: rgb(250, 255, 189) !important;
+}
+
+#footer {
+  color: #000000;
+}
+
+span.x-input-with-icon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+span.x-input-with-icon i {
+  color: grey;
+  border-color: lightgrey;
+  border-right: 1px solid lightgrey;
+  position: absolute;
+  left: 3px;
+  top: 19px;
+  padding: 0px 12px;
+  width: 35px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 0;
+  height: calc(100vh);
+}
+
+#theloginform { margin-bottom: 35px; width:100%; display: block; }
+
+.GoogleLoginButtonContainer {
+  height: 44px;
+  width: auto;
+}
+
+h1 {font-size: 24px; }

@@ -1,4 +1,11 @@
-<!-- app/equipment_form.html -->
+<!-- equipment_form.html -->
+
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <hr><hr><hr><hr>
+    
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
@@ -12,4 +19,5 @@
     </select>
 
     <button type="submit">Create Equipment</button>
-</form>
+</form></div>
+{% endblock %}

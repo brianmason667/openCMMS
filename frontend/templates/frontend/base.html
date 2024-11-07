@@ -1,55 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}OpenCMMS{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.min.css' %}">
-</head>
-<body>
-    <header>
-        <div id="panel" class="d-flex justify-content-between bg-light p-2">
-            <a href="#mypanel" class="btn btn-outline-primary">Menu</a>
-            <h1>OpenCMMS</h1>
-            <a href="{% url 'home' %}" class="btn btn-outline-primary">Profile</a>
-            
-        </div>
-    </header>
+<html class="ui-mobile"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<meta name="MobileOptimized" content="176">
+	<meta charset="iso-8859-1">
+	<meta name="viewport" content="width=device-width,maximum-scale=1, user-scalable=no">
+	<title>a tStitle</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/x3Mobile.css' %}">
+	<link rel="stylesheet" href="{% static 'frontend/jquery.mobile-1.4.4.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'frontend/jquery.dataTables.css' %}">
+	<script src="{% static 'frontend/jquery-1.9.1.min.js' %}"></script>
+	<script src="{% static 'frontend/jquery.mobile-1.4.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'frontend/ckeditor.js' %}"></script><style>.cke{visibility:hidden;}</style>
+	<script type="text/javascript" src="{% static 'frontend/jquery.dataTables.min.js' %}"></script>
+    <link rel="icon" href="{% static 'frontend/favicon.png' %}">
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Vertical Navigation -->
-            <nav class="col-md-2 bg-dark text-white p-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white">Home</a></li>
-                    <li><a href="{% url 'work-orders' %}">Work Orders</a></li>
-                    <li><a href="{% url 'inventory' %}">Inventory</a></li>
-                    <li><a href="{% url 'reports' %}">Reports</a></li>
-                    <li><a href="{% url 'asset-management' %}">Asset Management</a></li>
-                    <li><a href="{% url 'scheduling' %}">Scheduling</a></li>
-                    <li><a href="{% url 'user-management' %}">User Management</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'work-order-create' %}">Add Work Order</a></li>
-                    <li class="nav-item"><a href="{% url 'equipment-list' %}" class="nav-link text-white">Equipment</a></li>
-                    <li class="nav-item"><a href="{% url 'task-list' %}" class="nav-link text-white">Tasks</a></li>
-                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white">About</a></li>
-                </ul>
-            </nav>
+<style>
+  .ui-page { background: #1f5db9;}
+</style>
 
-            <!-- Content Area -->
-            <main class="col-md-10">
-                {% block content %}
-                <p>Page content goes here</p>
-                {% endblock %}
-            </main>
-        </div>
-    </div>
+</head><body class="ui-mobile-viewport ui-overlay-a">
 
-    <footer class="text-center p-3">
-        <p>&copy; {{ year }} OpenCMMS. All rights reserved.</p>
-    </footer>
+<div data-role="page" data-url="#home" tabindex="0" class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active" style="padding-top: 45px; min-height: 950px;">
 
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+	<div data-role="panel" id="mypanel" data-position="left" data-display="overlay" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-closed">
+		<div class="ui-panel-inner">
+			<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child">openCMMS Menu</li>
+	
+				<li><a href="#clockin" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Clock In</a></li>
+	
+				<li><a href="{% url 'work-orders' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Work Orders</a></li>
+				<li><a href="{% url 'reports' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Reports</a></li>
+				<li><a href="{% url 'part_list' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Parts</a></li>
+				<li><a href="{% url 'equipment-list' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Meter Readings</a></li>
+	
+				<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">Other Items</li>
+				<li><a href="{% url 'inventory' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Inventory</a></li>
+				<li><a href="{% url 'asset-management' %}" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Assets</a></li>
+				<li><a href="#contacts" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Contacts</a></li>
+	
+				<li data-icon="false" class="ui-last-child"><a href="{% url 'logout' %}" data-ajax="false" class="ui-btn">Log Out</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	 <!-- /panel -->
+	<div data-role="header" data-position="fixed" role="banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<a href="#mypanel" class="ui-btn-left ui-link ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all" data-icon="bars" data-role="button" role="button">Menu</a>
+		<h1 class="ui-title" role="heading" aria-level="1">Dashboard</h1>
+		<a href="{% url 'home' %}" data-ajax="false" data-icon="home" class="ui-btn-right ui-link ui-btn ui-icon-home ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Home</a>
+	</div>
+	<!-- /header -->
+
+<!-- content -->
+<div class="content-wrap" style="color: black; text-shadow: none;">
+    {% block content %}
+    <!-- Page-specific content goes here -->
+    {% endblock %}
+</div>
+<!-- /content -->
+
+</div>
+<div state="voice" class="placeholder-icon" id="tts-placeholder-icon" title="Click to show TTS button" style="background-image: url(&quot;moz-extension://9d5f628b-42a1-4c7e-b791-ba60a6c7180e/data/content_script/icons/voice.png&quot;); display: none;"><canvas width="36" height="36" class="loading-circle" id="text-to-speech-loader" style="display: none;"></canvas></div><div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div><div class="ui-panel-dismiss" style=""></div></body></html>

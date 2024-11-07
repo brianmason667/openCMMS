@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'utils.apps.UtilsConfig',
     'django_inlinecss',
     'frontend.apps.FrontendConfig',  # Add new frontend app here
+    'import_export',
 ]
 
 
@@ -318,3 +319,7 @@ LOGGING = {
             }
         }
 }
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'

@@ -1,0 +1,123 @@
+/* Header */
+#header-title {	display: inline; margin-left: 15%; text-align: left; }
+/* Forms */
+form .input-blank { background: #FF7373; }
+#content-wrap form input { width: 95%; border-radius: 7px; margin-left: 1px; }
+textarea { resize: none; }
+#get-issue-parts-form .ui-block-a,
+#adjust-inventory-form .ui-block-a,
+#add-meter-reading-form .left-a,
+.grid-details-header .ui-block-a { width: 25%; }
+#get-issue-parts-form .ui-block-b,
+#adjust-inventory-form .ui-block-b,
+#add-meter-reading-form .right-b,
+.grid-details-header .ui-block-b { width: 75%; }
+#get-issue-parts-form .normal, #adjust-inventory-form .normal { width: 50%; }
+#get-issue-parts-form .three { width: 33%; }
+#get-issue-parts-form .issue-input-group .no-right, #get-issue-parts-form .slash-group .no-right, #adjust-inventory-form .no-right { border-right: none; }
+#get-issue-parts-form .issue-input-group .no-left, #get-issue-parts-form .slash-group .no-left, #adjust-inventory-form .no-left { border-left: none; }
+#get-issue-parts-form .slash-group .ui-block-b, #get-issue-parts-form .slash-group .ui-block-d { width: 32%; }
+#get-issue-parts-form .slash-group .ui-block-c { width: 11%; }
+#slash { margin-top: 50%; margin-left: 45%; display: block; }
+.requests-grid label, .comp-grid label { white-space: nowrap; text-overflow: ellipsis; }
+.request-grid .ui-block-b { width: 38%; }
+.request-grid .ui-block-c, .comp-grid .ui-block-a { width: 14%; }
+.request-grid .ui-block-d, .comp-grid .ui-block-b { width: 23%; }
+.ui-btn-inner {font-size: small; padding: 7px 3px; }
+.ui-bar {font-size: small; padding: 3px; }
+.comp-grid .ui-block-c { width: 63%; }
+#mx-proceed { background: #21AF2B; border-color: #21AF2B; }
+#mx-cancel { background: #DF2A2A; border-color: #DF2A2A; }
+/*text*/
+#error-msg, .usermsg { color: #DF2A2A; margin: 5px; text-align: center; }
+.bottom-text { text-align: center; }
+form h2 { text-align: center; }
+/* text overflow in grids */
+.x-desc, .b-desc { overflow-y: scroll; }
+.x-desc { height: 66px; }
+.b-desc { height: 52px; }
+/**** DATEPICKER BEGIN ****/
+/* title */
+.dwv { text-align: center !important; background: -webkit-gradient(linear,left top,left bottom,from(#444),to(#2d2d2d)); }
+/* 'Save' & 'Cancel' buttons */
+.dwbg .dwb { background: -webkit-gradient(linear,left top,left bottom,from(#444),to(#2d2d2d)); -webkit-border-radius: 1em; border-radius: 1em; }
+	.dwbg .dwb:active {background: -webkit-gradient(linear,left top,left bottom,from(#3C607C),to(#3373a5)); -webkit-border-radius: 1em; border-radius: 1em;}
+/* '+' & '-' buttons */
+div.dwb-a { background: #3373a5!important; }
+	div.dwb-a span { color: #FFF; }
+/**** DATEPICKER END ***/
+#results-list { height: 200px; overflow-y: scroll; width: 100%; }
+.ro-input-wrapper { padding: 7px; padding-bottom:0; }
+.ro-input-wrapper > label { min-height:20px;}
+
+/* Base Table Styles */
+#table-custom-2 {
+    width: 100%; /* Ensures the table uses the full width of its container */
+    border-collapse: collapse; /* Collapses borders into a single border */
+}
+
+/* Header Styles */
+#table-custom-2 thead {
+    background-color: #d9d9d9; /* Background color for header */
+}
+
+#table-custom-2 th {
+    padding: 10px; /* Adds padding inside header cells */
+    text-align: left; /* Aligns text to the left */
+    border-bottom: 2px solid #ccc; /* Adds a bottom border */
+    cursor: pointer; /* Indicates that the header is clickable for sorting */
+}
+
+/* Row Styles */
+#table-custom-2 tbody tr {
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#table-custom-2 tbody tr:hover {
+    background-color: #f2f2f2; /* Highlight on hover */
+}
+
+#table-custom-2 tbody tr.odd {
+    background-color: #ffffff; /* Background color for odd rows */
+}
+
+#table-custom-2 tbody tr.even {
+    background-color: #f9f9f9; /* Background color for even rows */
+}
+
+/* Cell Styles */
+#table-custom-2 td {
+    padding: 8px; /* Adds padding inside cells */
+    border-bottom: 1px solid #ddd; /* Adds a bottom border to cells */
+}
+
+/* Table Responsive Styles */
+.ui-responsive {
+    overflow-x: auto; /* Allows horizontal scrolling for small screens */
+}
+
+/* Additional Styles for Specific Classes */
+.ui-body-d {
+    background-color: #f0f0f0; /* Background color for the table */
+}
+
+.ui-shadow {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.table-stripe {
+    border: 1px solid #ccc; /* Border for the table */
+}
+
+.ui-table-columntoggle {
+    display: table; /* Display as table for column toggle functionality */
+}
+
+/* Sorting styles */
+.sorting_asc {
+    background-image: url('ascending-icon.png'); /* Replace with actual image URL */
+}
+
+.sorting_desc {
+    background-image: url('descending-icon.png'); /* Replace with actual image URL */
+}

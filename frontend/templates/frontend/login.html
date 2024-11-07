@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OpenCMMS User Login</title>
+    <link rel="shortcut icon" href="{% static 'login/favicon.png' %}">
+    <script src="{% static 'login/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'login/jquery-migrate-3.4.1.min.js' %}"></script>
+    <script src="{% static 'login/jquery.validate.min.js' %}"></script>
+    <link href="{% static 'login/font-awesome.min.css' %}" rel="stylesheet" media="screen,print">
+    <link href="{% static 'login/bootstrap.css' %}" rel="stylesheet" media="screen,print">
+    <link href="{% static 'login/loginv3.css' %}" rel="stylesheet">
+</head>
+
+<body id="body-index">
+    <div id="left" class="pr">
+        <div id="wrap">
+            <div id="main">
+                <div class="photos">
+                    <div id="wrapper">
+                        <div id="logo_wrapper" class="standard_logo_wrapper mb24" role="banner">
+                            <div style="height: 100%; display: table-cell; vertical-align: bottom; display:block; margin-top:0;">
+                                <img as="image" src="{% static 'login/Logo.png' %}" type="image/png" alt="Logo">
+                            </div>
+                            <div class="mb16">
+                                <h1 id="welcome-text-line1">Log In</h1>
+                                <h5 id="welcome-text-line2">to continue to OpenCMMS</h5>
+                            </div>
+                        </div>
+
+                        <div id="content" style="display: block;">
+                            <div id="theloginform" role="main">
+                                <form id="wwform" name="wwform" method="post" action="{% url 'login' %}" novalidate>
+                                    {% csrf_token %}
+                                    <center>
+                                        <div class="mb16"><i class="loginError" id="welcome-prompt"></i></div>
+                                    </center>
+                                    <div id="usernamegroup" class="inputgroup">
+                                        <label for="txtusername" class="label" id="lblUsername">User ID or Email</label>
+                                        <div id="username_container">
+                                            <span class="x-input">
+                                                <input class="input r4 wide mb16 mt8 username" type="text" name="username" id="txtusername" minlength="6" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="passwordgroup" class="inputgroup">
+                                        <label for="txtpassword" class="label" id="lblPassword">Password</label>
+                                        <div id="password_container">
+                                            <span class="x-input">
+                                                <input class="input r4 wide mb16 mt8 password" type="password" id="txtpassword" name="password" minlength="4" onkeypress="checkCaps(event)" autocomplete="off" required>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="pwcaps" class="mb16" style="display: none;">
+                                        <img id="pwcapsicon" alt="Caps Lock is on." width="12" src="{% static 'login/capslock_blue.png' %}"> Caps Lock is on.
+                                    </div>
+
+                                    <button class="btn abcRioButton" type="submit" id="Login" name="Login" style="vertical-align:top">Log In</button>
+                                    <button type="button" id="forgot_password_link" class="btn btn-link pull-right">Forgot Password?</button>
+
+                                    <input type="hidden" name="returnUrl" id="returnUrl" value="">
+                                    <input type="hidden" name="BtnSubmit" id="BtnSubmit" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer" style="display:flex;" role="navigation">
+                        <div style="width: 50%; text-align: right;">
+                            <a id="link_OpenCMMS" href="{% url 'home' %}">OpenCMMS</a>
+                        </div>
+                        <div style="width: 50%; text-align: left;">
+                            <a id="link_contact" href="{% url 'home' %}">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,5 +1,29 @@
 # OpenCMMS_backend
 
+Setup:
+
+git clone https://github.com/brianmason667/webapp.git
+mv webapp/ openCMMS
+cd openCMMS/
+git clone https://github.com/brianmason667/openCMMS.git
+mv openCMMS/ app
+#start then stop the docker to init database
+docker-compose up
+^c
+#start it again
+docker-compose up
+#navigate to server ip note the erorr and stop again
+Invalid HTTP_HOST header: '192.168.1.101'. You may need to add '192.168.1.101' to ALLOWED_HOSTS.
+^c
+#edit base_settings.py and add what it says into Allowed hosts, in this case '192.168.1.101'
+nano app/openCMMS/base_settings.py
+#looks like this
+ALLOWED_HOSTS = ['192.168.1.101']
+#make your own ssl cert/keys put in this directory, keep the names fo the placeholders
+#unless you want to edit the nginx.conf, located in nginx/conf/nginx.conf
+openCMMS/nginx/ssl
+
+
 ![example workflow name](https://github.com/Open-CMMS/openCMMS_backend/workflows/master/badge.svg) ![example workflow branch](https://github.com/Open-CMMS/openCMMS_backend/workflows/dev/badge.svg) ![GitHub license](https://img.shields.io/github/license/Open-CMMS/openCMMS_backend) ![GitHub contributors](https://img.shields.io/github/contributors/Open-CMMS/openCMMS_backend)
 
 The aim of this project is to enable any company to manage the maintenance of its equipment in a simple way.
